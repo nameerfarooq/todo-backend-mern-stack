@@ -12,10 +12,10 @@ export const addTodo = async (req, res) => {
       title,
     });
     await todo.save();
-    res.json(todo);
+    res.status(201).json(todo);
   } catch (error) {
     console.log(error);
-    res.json({
+    res.status(500).json({
       message: "Server Error",
     });
   }
